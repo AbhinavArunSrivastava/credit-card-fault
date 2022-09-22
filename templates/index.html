@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit+card+fraud+detection</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--<div class="bg-danger text-light fw-bold mt-lg-0 mt-md-3 mt-sm-0 ps-5 pe-5">
+        Welcome to my Web Page
+    </div>-->
+    <div class="bg-success p-2 text-white text-center"><h1>Welcome to my Web Page</h1></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+   
+      <nav class="navbar navbar-dark bg-dark">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.linkedin.com/in/abhinav-arun-srivastava-637073224/">Abhinav Arun Srivastava</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+             Projects <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="https://test-h1b-visa.herokuapp.com/">H1B-Visa-Prediction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://docker-mlprediction-test.herokuapp.com/">Breast-Cancer-prediction</a>
+                </li>
+                
+                
+                
+              </ul>
+            </div>
+          </div>
+      </nav>
+      <div class="bg-success p-2 text-dark bg-opacity-50 text-center">
+        <h3>"DO NOT TRUST LUCK, TRUST ONLY TRAINING AND SKILLS!!!"</h3></div>
+      <div class="bg-success p-2 text-dark bg-opacity-50 text-center"><h5><ul><u>ML App for 'Credit Card Fraud Detection'</u></ul></h5></div>
+      <p class="lead">
+        Please, Enter the details.
+      </p>
+      
+     
+
+    
+    
+        <form action="{{ url_for('predict')}}" method="POST">
+          <p class="lead">
+            <h6>{{prediction_text}}</h6></p>
+              
+              <div class="row">
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="LIMIT_BAL" placeholder="LIMIT_BAL" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="SEX" placeholder="SEX" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="EDUCATION" placeholder="EDUCATION" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="MARRIAGE" placeholder="MARRIAGE" />
+                </div>
+
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="AGE" placeholder="AGE" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_0" placeholder="PAY_0" />
+                </div>
+              </div>
+              <div class="row">
+                
+                
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_2" placeholder="PAY_2" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_3" placeholder="PAY_3" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_4" placeholder="PAY_4" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_5" placeholder="PAY_5" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_6" placeholder="PAY_6" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT1" placeholder="PAY_AMT1" />
+                </div>
+              </div>
+          
+              
+          
+              <div class="row">
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT2" placeholder="PAY_AMT2" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT3" placeholder="PAY_AMT3" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT4" placeholder="PAY_AMT4" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT5" placeholder="PAY_AMT5" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="PAY_AMT6" placeholder="PAY_AMT6" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT1" placeholder="BILL_AMT1" />
+                </div>
+              </div>
+          
+              
+          
+              <div class="row">
+                
+                
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT2" placeholder="BILL_AMT2" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT3" placeholder="BILL_AMT3" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT4" placeholder="BILL_AMT4" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT5" placeholder="BILL_AMT5" />
+                </div>
+                <div class="col shadow-none p-3 mb-5 bg-light rounded">
+                  <input type="text" name="BILL_AMT6" placeholder="BILL_AMT6" />
+                </div>
+              </div>
+
+      <center><div class="shadow-sm p-3 mb-5 bg-body rounded"><input type="submit" value="Submit" /></div></center>
+    </form>
+    <div class="card">
+      <div class="card-header">
+        About Myself,
+      </div>
+      <div class="shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="bg-success p-2 text-dark bg-opacity-50 text-center">
+      <div class="card-body">
+        <h5 class="card-title">Hi!</h5>
+        <p class="card-text">My name is Abhinav Arun. I always pictured myself as an optical engineer, 
+          building Display Technologies, Lasers, and doing Image processing,
+          given my M.Sc.(Tech) in "Photonics(Engineering Physics)" from National Institute of Technology, Warangal. As someone from a non-CS background, 
+          it was quite challenging for me to understand the concepts of the first programming language I was introduced to - C++. 
+          As someone who is a firm believer of 'STOICISM' and focuses on 'what can be done' instead of dwelling on it, 
+          I took it as a challenge to understand the whole concept behind the programming language that I will be studying next. 
+          Consequently, that's how my journey towards computer science began.</p><p></p>
+          <p> I soon started to engage myself in this domain as those subjects captured my interest. 
+            From attending various MOOC courses on online platforms like udemy,coursera and doing projects, I have tried different technologies. 
+            To satiate my curiosity, I decided to try my analytical and statistical skills in Data Science and I didn't realize when it became my passion. </p>
+
+            <p>When I'm not studying, I love listening music, reading hindi poems(There's a special love for 'RASHMIRATHI'),
+               going for walks at night,playing pool with friends or learning new dance steps! I enjoy meeting new people and hearing new perspectives. </p>
+               <p>
+               Feel free to connect!</p>
+               <p>+917004142853,+919431622805</p>
+               <p>abhinavarunofficial@gmail.com</p>
+        <a href="https://www.linkedin.com/in/abhinav-arun-srivastava-637073224" class="btn btn-primary">Visit my LinkedIn Profile</a>
+        
+        <a href="https://github.com/AbhinavArunSrivastava" class="btn btn-primary">Visit my GitHub Account</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    
+  </div>
+  <div class="carousel-inner">
+    <div class="text-center"><h5>PowerBI Project Glimpse</h5></div>
+    <div class="carousel-item active">
+      <img src="static\Fdashboard.png" class="rounded mx-auto d-block w-50">
+      <div class="carousel-caption d-none d-md-block">
+        
+       
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static\Sdashboard.png" class="rounded mx-auto d-block w-50">
+      <div class="carousel-caption d-none d-md-block">
+        
+       
+        
+        
+      </div>
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      
+  </body>
+</html>
