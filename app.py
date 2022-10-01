@@ -20,12 +20,12 @@ def predict():
     final=[np.array(int_features)]
     prediction=model.predict(final)
     if int(prediction)== 1:
-            output ='YES'
+            output ='Fraudelent'
     else:
-            output ='NO' 
+            output ='Genuine' 
     
     
-    return render_template('index.html', prediction_text='Customer liable to make default payment in next month: {}'.format(output))
+    return render_template('index.html', prediction_text='Credit card transactions labeled as: {}'.format(output))
 
 
 
